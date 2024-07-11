@@ -16,6 +16,7 @@ public class BrowserLaunch {
 		String pagesource = driver.getPageSource();
 		System.out.println(pagesource);
 		driver.close();
+	//	driver.quit();   // close multiple windows
 
 	}
 
