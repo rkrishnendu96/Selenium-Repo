@@ -1,10 +1,10 @@
 package org.selenium.basics;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class GuruSiteRegistrationCommands {
 
@@ -29,15 +29,21 @@ public class GuruSiteRegistrationCommands {
 		state.sendKeys("TVM");
 		WebElement postalCode = driver.findElement(By.name("postalCode"));
 		postalCode.sendKeys("651255");
-		WebElement userName = driver.findElement(By.id("email"));
-		userName.sendKeys("krishnh@ghhd.com");
+		WebElement countryDropdown = driver.findElement(By.xpath("//select[@name='country']"));
+		Select selObj = new Select(countryDropdown);
+		selObj.selectByVisibleText("ANGOLA");
+		WebElement userNAme = driver.findElement(By.cssSelector("#email"));
+		userNAme.sendKeys("rkrishnendu56@gmdi.com");
+
 		WebElement password = driver.findElement(By.cssSelector(
 				"body > div:nth-child(5) > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(4) > td > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(5) > td > form > table > tbody > tr:nth-child(14) > td:nth-child(2) > input[type=password]"));
 		password.sendKeys("123456789");
 		WebElement confirmPassword = driver.findElement(By.name("confirmPassword"));
 		confirmPassword.sendKeys("123456789");
+
 		WebElement submit = driver.findElement(By.name("submit"));
 		submit.click();
+		driver.close();
 
 	}
 

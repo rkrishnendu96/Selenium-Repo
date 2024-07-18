@@ -22,4 +22,3 @@ public class UsingAnd {
 	}
 
 }
-//input[@id='Email' and @class='email']
