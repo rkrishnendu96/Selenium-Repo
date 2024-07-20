@@ -1,5 +1,7 @@
 package org.selenium.basics;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,7 +16,9 @@ public class Dropdown {
 		driver.get("https://demo.guru99.com/test/newtours/register.php");
 		WebElement countryDropdown = driver.findElement(By.xpath("//select[@name='country']"));
 		Select selObj = new Select(countryDropdown);
-		selObj.selectByVisibleText("ANGOLA");
+		//selObj.selectByVisibleText("ANGOLA");
+		WebElement getFirstElement=selObj.getFirstSelectedOption();
+		System.out.println(getFirstElement.getText());
 		driver.close();
 
 	}
@@ -41,10 +45,23 @@ public class Dropdown {
 		// driver.close();
 
 	}
+	// for fetch all the elemnts in dropdown
+
+	public void getTotalDropdownValues() {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://demo.guru99.com/test/newtours/register.php");
+		WebElement countryDropdown = driver.findElement(By.xpath("//select[@name='country']"));
+		Select selobj = new Select(countryDropdown);
+		List<WebElement> objList = selobj.getOptions(); // create returntype list of webelemnts
+		System.out.println("number of list" + " " + objList.size());
+
+	}
 
 	public static void main(String[] args) {
 		Dropdown obj = new Dropdown();
-		obj.dropdownByIndex();
+		obj.dropdownByText();
 	}
 
 }
+//https://demoqa.com/alerts

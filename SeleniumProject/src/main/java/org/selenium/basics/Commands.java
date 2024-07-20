@@ -19,6 +19,7 @@ public class Commands {
 		loginButton.click();
 
 	}
+	
 
 	public static void main(String[] args) {
 		Commands obj = new Commands();
