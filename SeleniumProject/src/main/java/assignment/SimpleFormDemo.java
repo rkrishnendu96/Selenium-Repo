@@ -127,7 +127,7 @@ public class SimpleFormDemo {
 		// obj.checkBoxDemo();
 		// obj.selectInput();
 		// obj.radioButtonDemo();
-		 obj.formSubmit();
+		obj.formSubmit();
 
 	}
 
